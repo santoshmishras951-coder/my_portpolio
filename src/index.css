@@ -1,0 +1,45 @@
+@import url('https://fonts.googleapis.com/css2?family=Great+Vibes&family=Alex+Brush&family=Dancing+Script:wght@600;700&display=swap');
+@import "tailwindcss";
+
+@custom-variant dark (&:is(.dark, .dark *));
+
+@layer base {
+  :root {
+    color-scheme: light;
+    --bg-surface: #ffffff;
+    --bg-surface-elevated: #f8fafc;
+    --text-primary: #0f172a;
+    --text-secondary: #334155;
+    --text-muted: #64748b;
+    --border-subtle: #e2e8f0;
+  }
+
+  html.dark {
+    color-scheme: dark;
+    --bg-surface: #0a0a0a;
+    --bg-surface-elevated: #141414;
+    --text-primary: #f8fafc;
+    --text-secondary: #cbd5e1;
+    --text-muted: #94a3b8;
+    --border-subtle: #262626;
+  }
+
+  html {
+    scroll-behavior: smooth;
+    scroll-snap-type: y proximity;
+    scroll-padding-top: 5rem;
+  }
+
+  @media (max-width: 768px) {
+    html {
+      scroll-padding-top: 4.25rem;
+      scroll-padding-bottom: 4.5rem;
+    }
+  }
+
+  body {
+    background-color: var(--bg-surface);
+    color: var(--text-primary);
+    transition: background-color 0.2s ease, color 0.2s ease;
+  }
+}
